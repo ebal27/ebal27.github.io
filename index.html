@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ekam's Page</title>
 
+  <!-- Google Fonts: Bubbly blocky font + thin skinny font -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Colors */
+    :root {
+      --royal-navy: #041E42;
+      --butter-yellow: #FFF3B0;
+      --bright-white: #FFFFFF;
+    }
+
+    /* Reset and base styles */
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--bright-white);
+      color: var(--royal-navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    header {
+      font-family: 'Fredoka One', cursive;
+      font-size: 3.5rem;
+      color: var(--butter-yellow);
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px var(--royal-navy);
+      letter-spacing: 3px;
+    }
+
+    main {
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
+
+    section {
+      background-color: var(--butter-yellow);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 12px rgba(4, 30, 66, 0.2);
+    }
+
+    section h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--royal-navy);
+    }
+
+    section p {
+      font-weight: 300;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--royal-navy);
+      margin-bottom: 1rem;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .brain-spinal-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(4, 30, 66, 0.3);
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: var(--royal-navy);
+      margin-top: auto;
+      padding: 1rem;
+      opacity: 0.7;
+    }
+
+    /* Responsive font scaling */
+    @media (max-width: 480px) {
+      header {
+        font-size: 2.5rem;
+      }
+      section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>___Ekam___</header>
+
+  <main>
+    <section>
+      <h2>My Future Goals</h2>
+      <p>
+        After high school, I want to study <strong>Medicine</strong>. I aim to become a
+        <em>neurologist</em>, <em>neurosurgeon</em>, or maybe even a <em>dermatologist</em>.
+      </p>
+      <p>
+        My favorite subjects in school are <strong>biology</strong> and <strong>anatomy</strong>, which help me understand the
+        human body, including complex systems like the brain and spinal cord.
+      </p>
+
+      <div class="image-container">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Brain_and_spinal_cord_01.svg/1024px-Brain_and_spinal_cord_01.svg.png"
+          alt="Diagram of Brain and Spinal Cord"
+          class="brain-spinal-img"
+        />
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Ekam
+  </footer>
+</body>
+</html>
