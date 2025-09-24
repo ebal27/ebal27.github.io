@@ -1,190 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ekam's Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>____Ekam____</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    /* Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Inter:wght@400;500&display=swap');
-
-    body {
-      margin: 0;
+    :root{
+      --navy: #0a1a40;
+      --navy-2: #08122d;
+      --butter: #FCE570;
+      --muted: #c9d7ff;
+    }
+    *{box-sizing:border-box}
+    html { scroll-behavior: smooth; }
+    body{
+      margin:0;
       font-family: 'Inter', sans-serif;
-      background-color: #0a1a40; /* Navy */
-      color: #fce570; /* Butter Yellow */
-      line-height: 1.6;
+      background: linear-gradient(180deg, var(--navy), #05102a 120%);
+      color: var(--butter);
+      -webkit-font-smoothing:antialiased;
     }
 
-    header {
+    /* Header / symmetric underscored name */
+    .site-header{
+      background: var(--navy-2);
+      padding: 32px 16px;
       text-align: center;
-      padding: 2rem;
-      background-color: #08122d;
     }
-
-    header h1 {
+    .site-title{
       font-family: 'Baloo 2', cursive;
-      font-size: 3rem;
+      font-size: 2.6rem;
       margin: 0;
-      color: #fce570;
+      display: inline-block;
+      color: var(--butter);
+    }
+    /* creates matching "____" on left and right for symmetry */
+    .site-title .label {
+      padding: 0 0.6rem;
+    }
+    .site-title .label::before,
+    .site-title .label::after {
+      content: "____";
+      font-family: monospace;
+      font-weight: 700;
+      margin: 0 0.5rem;
+      color: var(--butter);
+      display: inline-block;
+      vertical-align: middle;
     }
 
-    nav {
-      background: #112255;
-      padding: 0.5rem;
+    /* Table of contents (sticky) */
+    nav.toc{
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      background: rgba(255,255,255,0.03);
+      padding:10px 12px;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
     }
-
-    nav a {
-      color: #fce570;
-      margin: 0 1rem;
+    nav.toc a{
+      color: var(--butter);
       text-decoration: none;
-      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-weight:600;
     }
+    nav.toc a:hover{ background: rgba(255,255,255,0.03) }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+    .container{ max-width: 1000px; margin: 0 auto; padding: 28px 18px; }
 
-    section {
-      padding: 3rem 10%;
-    }
-
-    section h2 {
-      font-family: 'Baloo 2', cursive;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    img {
-      max-width: 100%;
+    section{
+      background: rgba(255,255,255,0.02);
+      padding: 26px;
       border-radius: 12px;
-      margin: 1rem 0;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      margin-bottom: 26px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     }
+    section h2{ font-family: 'Baloo 2', cursive; color: var(--butter); margin-top:0; }
+    p.lead{ color: var(--muted); font-size:1.05rem }
 
-    video {
-      max-width: 100%;
-      margin: 1rem 0;
-      border-radius: 12px;
+    .images{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
+    img.responsive{ width:100%; height:auto; border-radius:10px; box-shadow: 0 6px 18px rgba(0,0,0,0.5); }
+
+    /* Responsive embedded video */
+    .video-wrap{ position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:12px; }
+    .video-wrap iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:12px; }
+
+    /* hidden cats using :target (click link to reveal) */
+    .hidden-cat{ display:none; }
+    .hidden-cat:target{ display:block; margin-top:12px; }
+
+    .cats-bottom{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:24px; }
+    .cats-bottom img{ width:70px; height:auto; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.4); }
+
+    .footer{ padding:20px; text-align:center; color:var(--muted); font-size:0.95rem; margin-top:10px; }
+
+    @media (max-width:700px){
+      .images{ grid-template-columns:1fr; }
+      .site-title{ font-size:2rem; }
     }
-
-    .cats-bottom {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 3rem;
-    }
-
-    .cats-bottom img {
-      width: 80px;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    /* Hidden cats Easter eggs */
-    .hidden-cat {
-      display: none;
-    }
-
-    .hidden-cat:target {
-      display: block;
-      margin: 1rem 0;
-    }
-
   </style>
 </head>
 <body>
 
-<header>
-  <h1>____Ekam__</h1>
-</header>
+  <header class="site-header">
+    <!-- Symmetrical visual underscores added via CSS pseudo-elements -->
+    <h1 class="site-title"><span class="label">Ekam</span></h1>
+  </header>
 
-<nav>
-  <a href="#future">My Future</a>
-  <a href="#crypto">Cryptocurrency</a>
-  <a href="#internet">The Internet</a>
-</nav>
+  <nav class="toc" aria-label="Table of contents">
+    <a href="#future">My Future</a>
+    <a href="#crypto">Cryptocurrency</a>
+    <a href="#internet">The Internet</a>
+  </nav>
 
-<!-- SECTION 1: Future -->
-<section id="future">
-  <h2>My Future After High School</h2>
-  <p>
-    After high school, I want to study <strong>Medicine</strong>. I’m especially interested
-    in either becoming a <strong>dermatologist</strong> or a <strong>neuroscientist</strong>
-    because both skin and the brain are super fascinating to me. 
-  </p>
-  <a href="#cat1">[secret]</a>
-  <div id="cat1" class="hidden-cat">
-    <img src="https://placekitten.com/200/200" alt="Hidden Cat 1">
-  </div>
-</section>
+  <main class="container">
 
-<!-- SECTION 2: Cryptocurrency -->
-<section id="crypto">
-  <h2>Cryptocurrency</h2>
-  <p>
-    Cryptocurrency is like digital money that only exists online. It’s not physical or anything you can hold, but people still use it to buy stuff or invest.
-    One fun fact is that the first real purchase using Bitcoin was two pizzas.
-    Crypto became popular because it was new, exciting, and people liked the
-    idea of money that wasn’t controlled by banks or governments. It shows how
-    humans can give value to something you can’t even see—like agreeing together
-    that numbers on a screen are worth thousands of dollars.
-  </p>
-  <img src="https://images.unsplash.com/photo-1621502222430-3fdc17bbf85a" alt="Abstract Crypto Art">
-  <img src="https://images.unsplash.com/photo-1611078489935-0cb019da7e79" alt="Professional Crypto Chart">
-  <a href="#cat2">[secret]</a>
-  <div id="cat2" class="hidden-cat">
-    <img src="https://placekitten.com/220/200" alt="Hidden Cat 2">
-  </div>
-</section>
+    <!-- SECTION 1 -->
+    <section id="future">
+      <h2>My Future After High School</h2>
+      <p class="lead">
+        After high school I want to study <strong>Medicine</strong>. I might become a
+        <strong>dermatologist</strong> or a <strong>neuroscientist</strong> because both skin and the brain really interest me — they’re like puzzles with important rules underneath.
+      </p>
 
-<!-- SECTION 3: Internet -->
-<section id="internet">
-  <h2>The Internet</h2>
-  <p>
-    The internet is what connects billions of computers and phones so they can
-    talk to each other. It’s like a giant invisible web that lets us send memes,
-    stream videos, and even do homework.
-  </p>
-  <video controls>
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-    Your browser does not support video.
-  </video>
+      <p><a href="#cat1">(secret cat 1)</a></p>
+      <div id="cat1" class="hidden-cat"><img class="responsive" src="https://placekitten.com/300/200" alt="Hidden cat 1"></div>
+    </section>
 
-  <h3>Vocab Words</h3>
-  <ul>
-    <li><strong>Computing Device:</strong> A physical device that can run a program (like a computer or phone).</li>
-    <li><strong>Computer Network:</strong> A group of devices connected together that can send/receive data.</li>
-    <li><strong>Protocol:</strong> Rules that tell systems how to behave and communicate.</li>
-    <li><strong>Bandwidth:</strong> The maximum capacity of data a system can send (bits per second).</li>
-  </ul>
+    <!-- SECTION 2 -->
+    <section id="crypto">
+      <h2>Cryptocurrency</h2>
+      <p class="lead">
+        Cryptocurrency is digital money you can only see on computers or phones. People use it to buy things, trade, or invest. One fun fact: the first famous Bitcoin purchase paid for two pizzas!
+        Crypto became popular because it felt new and gave people a way to trade outside regular banks. It also shows how humans can decide that invisible numbers are worth something — we agree on value together.
+      </p>
 
-  <a href="#cat3">[secret]</a>
-  <div id="cat3" class="hidden-cat">
-    <img src="https://placekitten.com/240/200" alt="Hidden Cat 3">
-  </div>
-</section>
+      <!-- two reliable placeholder images (abstract + more 'professional' feel) -->
+      <div class="images" aria-hidden="false">
+        <img class="responsive" src="https://picsum.photos/id/1025/900/500" alt="Abstract crypto-style image">
+        <img class="responsive" src="https://picsum.photos/id/1050/900/500" alt="Professional chart-like image">
+      </div>
 
-<!-- 7 more hidden cats -->
-<div id="cat4" class="hidden-cat"><img src="https://placekitten.com/200/201" alt="Cat 4"></div>
-<div id="cat5" class="hidden-cat"><img src="https://placekitten.com/200/202" alt="Cat 5"></div>
-<div id="cat6" class="hidden-cat"><img src="https://placekitten.com/200/203" alt="Cat 6"></div>
-<div id="cat7" class="hidden-cat"><img src="https://placekitten.com/200/204" alt="Cat 7"></div>
-<div id="cat8" class="hidden-cat"><img src="https://placekitten.com/200/205" alt="Cat 8"></div>
-<div id="cat9" class="hidden-cat"><img src="https://placekitten.com/200/206" alt="Cat 9"></div>
-<div id="cat10" class="hidden-cat"><img src="https://placekitten.com/200/207" alt="Cat 10"></div>
+      <p style="margin-top:12px;"><a href="#cat2">(secret cat 2)</a></p>
+      <div id="cat2" class="hidden-cat"><img class="responsive" src="https://placekitten.com/320/200" alt="Hidden cat 2"></div>
+    </section>
 
-<!-- Bottom row of cats -->
-<div class="cats-bottom">
-  <img src="https://placekitten.com/100/100" alt="Cat A">
-  <img src="https://placekitten.com/101/100" alt="Cat B">
-  <img src="https://placekitten.com/102/100" alt="Cat C">
-  <img src="https://placekitten.com/103/100" alt="Cat D">
-  <img src="https://placekitten.com/104/100" alt="Cat E">
-</div>
+    <!-- SECTION 3 -->
+    <section id="internet">
+      <h2>The Internet</h2>
+      <p class="lead">
+        The internet is a gigantic network of computing devices that lets data move from one place to another — so you can message friends, stream videos, and learn stuff.
+      </p>
+
+      <!-- Better short explanatory video embedded (YouTube embed) -->
+      <div class="video-wrap" aria-hidden="false">
+        <iframe src="https://www.youtube.com/embed/7_LPdttKXPc"
+                title="How the Internet Works in 5 Minutes"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen referrerpolicy="no-referrer">
+        </iframe>
+      </div>
+
+      <div class="vocab" style="margin-top:14px;">
+        <h3>Vocab (4 selected)</h3>
+        <ul>
+          <li><strong>Computing Device:</strong> A physical device that can run a program (e.g., computer, smartphone).</li>
+          <li><strong>Computer Network:</strong> A group of interconnected computing devices capable of sending or receiving data.</li>
+          <li><strong>Protocol:</strong> An agreed set of rules that specify how systems behave and communicate.</li>
+          <li><strong>Bandwidth:</strong> The maximum transmission capacity of a system measured in bits per second.</li>
+        </ul>
+      </div>
+
+      <p><a href="#cat3">(secret cat 3)</a></p>
+      <div id="cat3" class="hidden-cat"><img class="responsive" src="https://placekitten.com/340/200" alt="Hidden cat 3"></div>
+    </section>
+
+    <!-- Cats 4–10 (hidden) -->
+    <div id="cat4" class="hidden-cat"><img class="responsive" src="https://placekitten.com/300/301" alt="Hidden cat 4"></div>
+    <div id="cat5" class="hidden-cat"><img class="responsive" src="https://placekitten.com/300/302" alt="Hidden cat 5"></div>
+    <div id="cat6" class="hidden-cat"><img class="responsive" src="https://placekitten.com/300/303" alt="Hidden cat 6"></div>
+    <div id="cat7" class="hidden-cat"><img class="responsive" src="https://placekitten.com/300/304" alt="Hidden cat 7"></div>
+    <div id="cat8" class="hidden-cat"><img class="responsive" src="https://placekitten.com/300/305" alt="Hidden cat 8"></div>
+    <div id="cat9" class="hidden-cat"><img class="responsive" src="https://placekitten.com/300/306" alt="Hidden cat 9"></div>
+    <div id="cat10" class="hidden-cat"><img class="responsive" src="https://placekitten.com/300/307" alt="Hidden cat 10"></div>
+
+    <!-- Bottom row of visible cute cats -->
+    <div class="cats-bottom" aria-hidden="false">
+      <img src="https://placekitten.com/100/100" alt="Cute cat A">
+      <img src="https://placekitten.com/101/100" alt="Cute cat B">
+      <img src="https://placekitten.com/102/100" alt="Cute cat C">
+      <img src="https://placekitten.com/103/100" alt="Cute cat D">
+      <img src="https://placekitten.com/104/100" alt="Cute cat E">
+    </div>
+
+    <div class="footer">
+      <p>Made by Ekam • navy + butter-yellow theme • hidden cats: 10 total — have fun finding them!</p>
+    </div>
+  </main>
 
 </body>
 </html>
+
