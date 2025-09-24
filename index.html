@@ -1,184 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
   <title>Ekam's Page</title>
-
-  <!-- Google Fonts: Bubbly blocky font + thin skinny font -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
-
   <style>
-    /* Colors */
-    :root {
-      --royal-navy: #041E42;
-      --butter-yellow: #FFF3B0;
-      --bright-white: #FFFFFF;
-    }
+    /* Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Inter:wght@400;500&display=swap');
 
-    /* Reset and base styles */
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: var(--bright-white);
-      color: var(--royal-navy);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+      background-color: #0a1a40; /* Navy */
+      color: #fce570; /* Butter Yellow */
+      line-height: 1.6;
     }
 
     header {
-      font-family: 'Fredoka One', cursive;
-      font-size: 3.5rem;
-      color: var(--butter-yellow);
-      margin-bottom: 2rem;
-      text-shadow: 2px 2px var(--royal-navy);
-      letter-spacing: 3px;
+      text-align: center;
+      padding: 2rem;
+      background-color: #08122d;
     }
 
-    main {
-      max-width: 700px;
-      width: 100%;
-      text-align: center;
+    header h1 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 3rem;
+      margin: 0;
+      color: #fce570;
+    }
+
+    nav {
+      background: #112255;
+      padding: 0.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fce570;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     section {
-      background-color: var(--butter-yellow);
-      border-radius: 12px;
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 6px 12px rgba(4, 30, 66, 0.2);
+      padding: 3rem 10%;
     }
 
     section h2 {
-      font-family: 'Fredoka One', cursive;
+      font-family: 'Baloo 2', cursive;
       font-size: 2rem;
       margin-bottom: 1rem;
-      color: var(--royal-navy);
     }
 
-    section p {
-      font-weight: 300;
-      font-size: 1.15rem;
-      line-height: 1.6;
-      color: var(--royal-navy);
-      margin-bottom: 1rem;
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1rem 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     }
 
-    .image-container {
+    video {
+      max-width: 100%;
+      margin: 1rem 0;
+      border-radius: 12px;
+    }
+
+    .cats-bottom {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
       flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 3rem;
     }
 
-    .brain-spinal-img, .crypto-img {
-      max-width: 48%;
+    .cats-bottom img {
+      width: 80px;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(4, 30, 66, 0.3);
+      border-radius: 10px;
     }
 
-    .video-container {
-      margin-top: 1rem;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 6px 12px rgba(4, 30, 66, 0.2);
+    /* Hidden cats Easter eggs */
+    .hidden-cat {
+      display: none;
     }
 
-    iframe {
-      width: 100%;
-      height: 315px;
-      border: none;
+    .hidden-cat:target {
+      display: block;
+      margin: 1rem 0;
     }
 
-    footer {
-      font-size: 0.9rem;
-      color: var(--royal-navy);
-      margin-top: auto;
-      padding: 1rem;
-      opacity: 0.7;
-    }
-
-    /* Responsive font scaling */
-    @media (max-width: 480px) {
-      header {
-        font-size: 2.5rem;
-      }
-      section h2 {
-        font-size: 1.5rem;
-      }
-      .brain-spinal-img, .crypto-img {
-        max-width: 100%;
-      }
-      iframe {
-        height: 200px;
-      }
-    }
   </style>
 </head>
-
 <body>
-  <header>___Ekam___</header>
 
-  <main>
-    <section>
-      <h2>My Future Goals</h2>
-      <p>
-        After high school, I want to study <strong>Medicine</strong>. I aim to become a
-        <em>neurologist</em>, <em>neurosurgeon</em>, or maybe even a <em>dermatologist</em>.
-      </p>
-      <p>
-        My favorite subjects in school are <strong>biology</strong> and <strong>anatomy</strong>, which help me understand the
-        human body, including complex systems like the brain and spinal cord.
-      </p>
+<header>
+  <h1>____Ekam__</h1>
+</header>
 
-      <div class="image-container">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/8/88/Brain_spinal_cord_and_nerves.svg"
-          alt="Diagram of Brain and Spinal Cord"
-          class="brain-spinal-img"
-        />
-      </div>
-    </section>
+<nav>
+  <a href="#future">My Future</a>
+  <a href="#crypto">Cryptocurrency</a>
+  <a href="#internet">The Internet</a>
+</nav>
 
-    <section>
-      <h2>Understanding Cryptocurrency</h2>
-      <p>
-        Cryptocurrency is a form of digital money that uses <strong>protocols</strong> based on cryptography to secure transactions.
-        It became popular because it allows peer-to-peer payments without needing traditional banks or intermediaries.
-        Cryptocurrencies like <strong>Bitcoin</strong> and <strong>Ethereum</strong> rely on <strong>computer networks</strong> and
-        <strong>IP</strong> addresses to transmit <strong>packets</strong> of transaction data securely and quickly.
-        They use <strong>TCP</strong> protocols to ensure reliable and ordered delivery of these data packets across the internet.
-      </p>
-      <div class="image-container">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
-          alt="Bitcoin Logo"
-          class="crypto-img"
-        />
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/0/05/Ethereum_logo_2014.svg"
-          alt="Ethereum Logo"
-          class="crypto-img"
-        />
-      </div>
+<!-- SECTION 1: Future -->
+<section id="future">
+  <h2>My Future After High School</h2>
+  <p>
+    After high school, I want to study <strong>Medicine</strong>. I’m especially interested
+    in either becoming a <strong>dermatologist</strong> or a <strong>neuroscientist</strong>
+    because both skin and the brain are super fascinating to me. 
+  </p>
+  <a href="#cat1">[secret]</a>
+  <div id="cat1" class="hidden-cat">
+    <img src="https://placekitten.com/200/200" alt="Hidden Cat 1">
+  </div>
+</section>
 
-      <div class="video-container">
-        <iframe
-          src="https://www.youtube.com/embed/SSo_EIwHSd4"
-          title="What is Cryptocurrency? | Simply Explained"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </section>
-  </main>
+<!-- SECTION 2: Cryptocurrency -->
+<section id="crypto">
+  <h2>Cryptocurrency</h2>
+  <p>
+    Cryptocurrency is like digital money that only exists online. It’s not physical or anything you can hold, but people still use it to buy stuff or invest.
+    One fun fact is that the first real purchase using Bitcoin was two pizzas.
+    Crypto became popular because it was new, exciting, and people liked the
+    idea of money that wasn’t controlled by banks or governments. It shows how
+    humans can give value to something you can’t even see—like agreeing together
+    that numbers on a screen are worth thousands of dollars.
+  </p>
+  <img src="https://images.unsplash.com/photo-1621502222430-3fdc17bbf85a" alt="Abstract Crypto Art">
+  <img src="https://images.unsplash.com/photo-1611078489935-0cb019da7e79" alt="Professional Crypto Chart">
+  <a href="#cat2">[secret]</a>
+  <div id="cat2" class="hidden-cat">
+    <img src="https://placekitten.com/220/200" alt="Hidden Cat 2">
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Ekam
-  </footer>
+<!-- SECTION 3: Internet -->
+<section id="internet">
+  <h2>The Internet</h2>
+  <p>
+    The internet is what connects billions of computers and phones so they can
+    talk to each other. It’s like a giant invisible web that lets us send memes,
+    stream videos, and even do homework.
+  </p>
+  <video controls>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+
+  <h3>Vocab Words</h3>
+  <ul>
+    <li><strong>Computing Device:</strong> A physical device that can run a program (like a computer or phone).</li>
+    <li><strong>Computer Network:</strong> A group of devices connected together that can send/receive data.</li>
+    <li><strong>Protocol:</strong> Rules that tell systems how to behave and communicate.</li>
+    <li><strong>Bandwidth:</strong> The maximum capacity of data a system can send (bits per second).</li>
+  </ul>
+
+  <a href="#cat3">[secret]</a>
+  <div id="cat3" class="hidden-cat">
+    <img src="https://placekitten.com/240/200" alt="Hidden Cat 3">
+  </div>
+</section>
+
+<!-- 7 more hidden cats -->
+<div id="cat4" class="hidden-cat"><img src="https://placekitten.com/200/201" alt="Cat 4"></div>
+<div id="cat5" class="hidden-cat"><img src="https://placekitten.com/200/202" alt="Cat 5"></div>
+<div id="cat6" class="hidden-cat"><img src="https://placekitten.com/200/203" alt="Cat 6"></div>
+<div id="cat7" class="hidden-cat"><img src="https://placekitten.com/200/204" alt="Cat 7"></div>
+<div id="cat8" class="hidden-cat"><img src="https://placekitten.com/200/205" alt="Cat 8"></div>
+<div id="cat9" class="hidden-cat"><img src="https://placekitten.com/200/206" alt="Cat 9"></div>
+<div id="cat10" class="hidden-cat"><img src="https://placekitten.com/200/207" alt="Cat 10"></div>
+
+<!-- Bottom row of cats -->
+<div class="cats-bottom">
+  <img src="https://placekitten.com/100/100" alt="Cat A">
+  <img src="https://placekitten.com/101/100" alt="Cat B">
+  <img src="https://placekitten.com/102/100" alt="Cat C">
+  <img src="https://placekitten.com/103/100" alt="Cat D">
+  <img src="https://placekitten.com/104/100" alt="Cat E">
+</div>
+
 </body>
 </html>
